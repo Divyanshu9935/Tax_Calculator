@@ -5,29 +5,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const taxResult = document.getElementById('taxResult');
   const closeBtn = document.getElementById('closeBtn');
 
-  // Function to display error icon
-  function displayErrorIcon(inputField) {
+  // Function to display error message inside input field
+  function displayError(inputField, errorMessage) {
     const errorIcon = inputField.parentElement.querySelector('.error-icon');
-    const inputValue = inputField.value.trim();
-    if (inputValue === '' || isNaN(parseFloat(inputValue))) {
-      errorIcon.style.display = 'inline-block';
-    } else {
-      errorIcon.style.display = 'none';
-    }
+    const tooltip = inputField.parentElement.querySelector('.tooltip');
+
+    // Show error icon and tooltip
+    errorIcon.style.display = 'inline-block';
+    tooltip.textContent = errorMessage;
+    tooltip.style.display = 'block';
+
+    // Add error class to input field
+    inputField.classList.add('error');
   }
 
-  // Show/hide error icons on input change
+  // Function to remove error message from input field
+  function removeError(inputField) {
+    const errorIcon = inputField.parentElement.querySelector('.error-icon');
+    const tooltip = inputField.parentElement.querySelector('.tooltip');
+
+    // Hide error icon and tooltip
+    errorIcon.style.display = 'none';
+    tooltip.style.display = 'none';
+
+    // Remove error class from input field
+    inputField.classList.remove('error');
+  }
+
+  // Show/hide error messages on input change
   const inputFields = document.querySelectorAll('input[type="text"]');
   inputFields.forEach((inputField) => {
     inputField.addEventListener('input', function() {
-      displayErrorIcon(this);
+      const inputValue = this.value.trim();
+      const isValid = !isNaN(parseFloat(inputValue)) && isFinite(inputValue);
+      if (!isValid) {
+        displayError(this, 'Please enter numbers only');
+      } else {
+        removeError(this);
+      }
     });
   });
 
   // Display modal
   function showModal(incomeTax, remaining) {
     taxResult.innerText = `Tax to be paid: ${incomeTax.toFixed(2)} Lakhs`;
-    remainingSalary.innerText = `Remaining Salary: ${remaining.toFixed(2)} Lakhs`;
+    remainingSalary.innerText = `Your Overall Income will be\n ${remaining.toFixed(2)} \nafter tax deductions`;
     modal.style.display = 'block';
   }
 
