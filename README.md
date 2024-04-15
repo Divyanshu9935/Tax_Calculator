@@ -18,3 +18,11 @@ Technologies Used
 HTML
 CSS
 JavaScript
+
+Outputs:
+![image](https://github.com/Divyanshu9935/Tax_Calculator/assets/50789852/65a85833-5ee1-47fb-a4e1-d0fc4cd4a68f)
+![image](https://github.com/Divyanshu9935/Tax_Calculator/assets/50789852/c04992d5-5534-4759-8034-fb5369ef1f17)
+
+No tax deduction because of taxable income is less than 900000.
+![image](https://github.com/Divyanshu9935/Tax_Calculator/assets/50789852/8a5c798e-0ba5-4a11-b21c-dd945df889c6)
+
