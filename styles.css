@@ -1,0 +1,132 @@
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form container styles */
+#taxForm {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Label styles */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input field styles */
+.input-container input,
+.input-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Age style */
+#age {
+  font-weight: bold;
+}
+
+/* Error icon styles */
+.error-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff0000;
+  cursor: pointer;
+  display: none;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: absolute;
+  top: calc(-100% - 5px);
+  right: 0;
+  padding: 5px;
+  color: #fff;
+  background-color: #ff0000;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Modal container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255,0); /* Semi-transparent background */
+  
+  margin-left: 25%;
+  
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 40%;
+  max-height: 60%;
+}
+
+/* Close button */
+#closeBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+/* Close button hover */
+#closeBtn:hover {
+  background-color: #d32f2f;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  #taxForm {
+    width: 90%;
+  }
+
+  .modal{
+    width: 70%;
+    margin-left: 25%;
+  }
+  .modal-content {
+    width: 100%;
+  }
+}

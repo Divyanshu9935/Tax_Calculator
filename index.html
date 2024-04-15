@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form id="taxForm">
+      <label for="grossIncome">Enter gross annual income</label>
+      <div class="input-container">
+        <input type="text" id="grossIncome" name="grossIncome" placeholder="Enter gross annual income" required/>
+        <div class="error-icon">!</div>
+        <div class="tooltip" >Please enter numbers only</div>
+      </div>
+      <br />
+
+      <label for="extraIncome">Enter extra income</label>
+      <div class="input-container">
+        <input type="text" id="extraIncome" name="extraIncome" placeholder="Enter extra income from other sources"/>
+        <div class="error-icon">!</div>
+        <div class="tooltip">Please enter numbers only</div>
+      </div>
+      <br />
+
+      <label for="age">Enter age group</label>
+      <div class="input-container">
+        <select id="age" name="age" required>
+          <option value="<40" selected>&lt;40</option>
+          <option value=">=40 & <60">≥40 &lt;60</option>
+          <option value=">=60">≥60</option>
+        </select>
+      </div>
+      <br />
+
+      <label for="deductions">Total tax deductions</label>
+      <div class="input-container">
+        <input type="text" id="deductions" name="deductions" placeholder="total applicable tax deductions" />
+      </div>
+      <br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p id="remainingSalary"></p>
+        <p id="taxResult"></p>
+        <button id="closeBtn" class="close">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
