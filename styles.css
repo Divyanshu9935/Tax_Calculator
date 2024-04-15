@@ -24,9 +24,13 @@ label {
 }
 
 /* Input field styles */
+.input-container {
+  position: relative;
+}
+
 .input-container input,
 .input-container select {
-  width: 100%;
+  width: calc(100% - 40px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -41,24 +45,49 @@ label {
 /* Error icon styles */
 .error-icon {
   position: absolute;
-  right: 10px;
+  right: 45px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ff0000;
+  color: rgb(24, 21, 21)(0, 0, 0);
   cursor: pointer;
   display: none;
+  width: 20px; 
+  height: 20px;
+  border-radius: 50%; 
+  border: 1px solid black;
+  background-color: rgb(232,240,254); 
+  text-align: center; 
+  line-height: 20px; 
+}
+
+.error-icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: (232,240,254,255);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-size: 12px;
 }
 
 /* Tooltip styles */
 .tooltip {
   position: absolute;
-  top: calc(-100% - 5px);
+  top: calc(-100% + 5px);
   right: 0;
   padding: 5px;
-  color: #fff;
-  background-color: #ff0000;
+  color: #ff0000;
+  background-color: rgb(255, 255, 255, 0);
   border-radius: 5px;
-  display: none;
+  display: none; /* Initially hidden */
+}
+
+.tooltip:hover {
+  display: block; /* Show tooltip on hover */
 }
 
 /* Submit button styles */
@@ -83,9 +112,7 @@ button[type="submit"] {
   height: 100%;
   overflow: auto;
   background-color: rgba(255, 255, 255,0); /* Semi-transparent background */
-  
   margin-left: 25%;
-  
 }
 
 /* Modal content */
@@ -128,5 +155,9 @@ button[type="submit"] {
   }
   .modal-content {
     width: 100%;
+  }
+  .tooltip {
+    max-width: 150px;
+    font-size: 12px;
   }
 }
